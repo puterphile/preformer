@@ -1,7 +1,6 @@
 {
   "name": "preformer",
   "description": "Preformer is a react library for validation form's submissions",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "types": "./dist/index.d.ts",
