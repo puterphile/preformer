@@ -54,7 +54,7 @@ describe("contact form validation", async () => {
     });
 
     fireEvent.change(await component.findByLabelText("message"), {
-      target: { value: "invalid email" },
+      target: { value: "Hello, World" },
     });
 
     await act(async () =>
