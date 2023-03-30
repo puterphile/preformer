@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, RefObject, useCallback } from "react";
 import { Schema } from "yup";
+import { rally } from "../utils";
 
 type HTMLSubmitEvent = HTMLElementEventMap["submit"];
 type onSubmit = (this: HTMLSubmitEvent, e: HTMLSubmitEvent, data: any) => void;
@@ -17,7 +18,9 @@ export default function usePreformer(schema: Schema, onSubmit: onSubmit) {
     (schema: Schema) => {
       return new Promise((resolve) => {
         const { current: element } = reference;
-        const data = Object.fromEntries(new FormData(element as any));
+        const data = rally(new FormData(element!));
+        console.log(data);
+
         schema
           .validate(data)
           .then((data) => (setException(undefined), resolve(data)))
