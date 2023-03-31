@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, RefObject, useCallback } from "react";
 import { Schema } from "yup";
-import { rally } from "../utils";
+import { rally } from "./utils";
 
 type HTMLSubmitEvent = HTMLElementEventMap["submit"];
 type onSubmit = (this: HTMLSubmitEvent, e: HTMLSubmitEvent, data: any) => void;
