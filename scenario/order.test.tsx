@@ -1,6 +1,7 @@
+import React from "react";
 import { describe, expect, it } from "vitest";
 import { render, fireEvent, act } from "@testing-library/react";
-import { yup, usePreformer } from "..";
+import { yup, usePreformer } from "../dist";
 
 const schema = yup.object({
   order: yup.array().of(yup.string()),
